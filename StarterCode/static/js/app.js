@@ -15,9 +15,9 @@ function readFile(sample) {
         });
     
     
-        // sort data
+        // sorted data
     
-        // filter the data. This filters down json data to the id we reference in line 10
+        // filtered the json data to the id referenced in line 10
         var filtered_data = samples.filter(data => data.id == sample);
         console.log(filtered_data);
     
@@ -39,7 +39,7 @@ function readFile(sample) {
         //var sortedsamples = results.sort((a,b) =>
         //b.sample - a.sample);
     
-        //slice to find top 10
+        //sliced to find top 10
     
         var topsamples = results.sample_values.slice(0,10).reverse();
     
@@ -50,7 +50,7 @@ function readFile(sample) {
         var otulabels = results.otu_labels;
         var otu_labels = otulabels.slice(0, 10).reverse()
     
-        //create horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual
+        //created horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual
     
         var trace1 = {
                 x: topsamples,
@@ -70,8 +70,8 @@ function readFile(sample) {
             Plotly.newPlot('bar', data, layout)
     
     
-            //create a bubble char that displays each sample
-            //create variables here for the bubble
+            //created bubble chart that displays each sample
+            //created variables for the bubble
             var otu_ids = results.otu_ids
             var sample_values = results.samples_values
     
@@ -88,7 +88,7 @@ function readFile(sample) {
     
             var data2 = [trace2];
     
-            //Create bubble chart layout
+            // bubble chart layout
             var layout2 = {
                 title: 'All OTUs in Sample',
                 xaxis: {title: 'OTU ID'},
@@ -114,5 +114,3 @@ function readFile(sample) {
     
     
     readFile();
-    //could add in an init function to show one id as a default or populate dropdown and pick first one found
-    
